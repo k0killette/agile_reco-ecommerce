@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import "./App.css";
 
 function App() {
   const [currentPage, setCurrentPage] = useState("home");
-  const [isLoggedIn, setIsLoggedIn] = useState(true);   // toggle pour tester
-  const [isAdmin, setIsAdmin] = useState(false);        // toggle pour tester
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isAdmin, setIsAdmin] = useState(false);
 
   const handleNavigate = (page) => {
     console.log("Navigate to:", page);
@@ -37,8 +38,10 @@ function App() {
         </button>
       </div>
 
-      {/* Laisse le reste vide pour voir le Header "seul" */}
-      <main style={{ height: "60vh", background: "#f7f7f7" }} />
+      <Footer
+      currentPage={currentPage}
+      onNavigate={handleNavigate}
+      />
     </>
   );
 }
