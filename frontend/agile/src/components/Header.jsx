@@ -3,7 +3,7 @@ import { ShoppingCart, Search, User, ChevronDown, Menu, LogOut } from 'lucide-re
 import './Header.css';
 
 const Header = ({ currentPage, onNavigate, isLoggedIn, isAdmin, onLogout }) => {
-    const [mobileMenuOpen, setMobileMenuOpen] = usestate(false);
+    // const [mobileMenuOpen, setMobileMenuOpen] = usestate(false);
     const [dropdownOpen, setDropdownOpen] = useState(false);
 
     return (
@@ -14,7 +14,7 @@ const Header = ({ currentPage, onNavigate, isLoggedIn, isAdmin, onLogout }) => {
                         <span className="logo-text">LaSape</span>
                     </div>
 
-                    <nav className={`nav ${mobileMenuOpen ? 'nav-mobile-open' : ''}`}>
+                    <nav className='nav'>
                         <a className={currentPage == 'home' ? 'nav-link active' : 'nav-link'} onClick={() => onNavigate('home')}>Accueil</a>
                         <div className="nav-dropdown">
                             <a className='nav-link' onClick={() => setDropDownOpen(!dropdownOpen)}>
@@ -58,8 +58,8 @@ const Header = ({ currentPage, onNavigate, isLoggedIn, isAdmin, onLogout }) => {
                         <ShoppingCart className="header-icon" />
                     </div>
 
-                    <Menu className="mobile-menu-icon"
-                    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}/>
+                    {/* <Menu className="mobile-menu-icon"
+                    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}/> */}
                 </div>
             </div>
         </header>
